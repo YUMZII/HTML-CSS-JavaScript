@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="util.js"></script>
+</head>
+<body>
+<script>
+function getKorDay(y,m,d){
+	if(isNaN(y) || isNaN(m) || isNaN(d)){
+		return;
+	}
+	let date = new Date(y,m-1,d);
+	let days = ["일", "월", "화", "수", "목", "금", "토" ];
+	return days[date.getDay()];
+}
+	let y = Number(prompt("년을 입력하세요"));
+	let m = Number(prompt("월을 입력하세요"));
+	let d = Number(prompt("일을 입력하세요"));
+	
+	let result = getKorDay(y,m,d);
+	
+	if(result === undefined){
+		writeColor("결과없음","h1","red");
+	}else{
+		writeColor(y + "년" + m + "월" + d +"일은"+ result +"요일입니다.","h1","blue")
+	}
+</script>
+</body>
+</html>
