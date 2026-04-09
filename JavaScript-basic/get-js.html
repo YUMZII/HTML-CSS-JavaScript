@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="util.js"></script>
+</head>
+<body>
+<script>
+writeColor("<h1> 자바스크립트 실습(6) <h1>", "h1", "blue");
+
+let arr = [10, 5, 7,21, 4, 8, 18]
+
+function getSum(arr){
+	let sum = 0;
+	arr.forEach(function(n){
+		sum += n;
+	});
+	return sum;
+}
+
+function getMaxValue(arr){
+	let max = arr[0];
+	arr.forEach(function(n){
+		if(n > max){
+			max = n;
+		}
+	});
+	return max;
+}
+
+function getMinValue(arr){
+	let min = arr[0];
+	arr.forEach(function(n){
+		if(n < min){
+			min = n;
+		}
+	});
+	return min;
+}
+
+function getCountOddNum(arr){
+	let odd = 0;
+	arr.forEach(function(n){
+		if (n%2 !== 0){
+			odd++;
+		}
+		});
+	return odd;
+}
+function getCountEvenNum(arr){
+	let even = 0;
+	arr.forEach(function(n){
+		if(n%2 == 0){
+			even++;
+		}
+	}); return even;
+}
+document.write("<h2>")
+writeColor("모든 원소의 합: " + getSum(arr), "h2", "red");
+document.write("<ul>");
+write("최대값 " + getMaxValue(arr), "li")
+write("최소값 " + getMinValue(arr), "li")
+write("짝수의 개수 " + getCountOddNum(arr), "li")
+write("홀수의 개수 " + getCountEvenNum(arr), "li")
+document.write("</u1>");
+</script>
+</body>
+</html>
