@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function calc(num){//calc함수 구현
+	let sum = 0;
+	//인자가 없으면
+	if(arguments.length === 0){
+		return 0;
+	} 
+	//반복하면서 모든 검사
+	for(let i = 0; i<arguments.length; i++){
+		//숫자로 변환 시도
+		let num = Number(arguments[i]);
+		//숫자가 아니면
+		if(isNaN(num)){
+			return "숫자만 전달하세요";
+	}
+		sum+=num;
+}
+	return sum;
+}
+document.write("<h3>" + calc()+"</h3>");
+document.write("<h3>" + calc(10, 20, '30')+"</h3>");
+document.write("<h3>" + calc(10, '가나다', 20)+"</h3>");
+document.write("<h3>" + calc(1,2,3,4,5)+"</h3>");
+</script>
+</body>
+</html>
