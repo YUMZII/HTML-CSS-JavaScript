@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+@font-face {
+    font-family: 'HancomMalangMalang-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2406-1@1.0/HancomMalangMalang-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+* {
+ 	font-family: 'HancomMalangMalang-Regular';
+ 	text-align: center;
+}
+</style>
+</head>
+<body>
+<h1 id = "title">구구단</h1>
+<nav id = "gugu">
+	<button data-target="1">1단</button>
+	<button data-target="2">2단</button>
+	<button data-target="3">3단</button>
+	<button data-target="4">4단</button>
+	<button data-target="5">5단</button>
+	<button data-target="6">6단</button>
+	<button data-target="7">7단</button>
+	<button data-target="8">8단</button>
+	<button data-target="9">9단</button>
+</nav>
+<div id="result"></div>
+<script>
+document.getElementById("gugu").addEventListener("click",function(e){
+	if(e.target.tagName !== "BUTTON")return;
+	let dan = e.target.dataset.target;
+	let output = " ";
+	for(let i = 2; i<= 9; i++){
+		output += dan + '*' + i + '=' + (dan*i)+"<br>";
+	}
+	document.getElementById("result").innerHTML=output;
+});
+document.getElementById("title").addEventListener("click",function(){
+	location.href = "https://ko.wikipedia.org/wiki/구구단";
+});
+</script>
+</body>
+</html>
